@@ -12,6 +12,7 @@ function Theatre(config) {
 
     const debug = config.debug || false;
     const framerate = config.framerate || 60;
+    const sharp = config.sharp || false;
 
     function initialize() {
 
@@ -19,6 +20,12 @@ function Theatre(config) {
 
         this.container = canvas.element;
         this.context = canvas.context;
+
+        if (sharp === true) {
+
+            canvas.sharp();
+        }
+
         container.appendChild(canvas.element);
 
         const loop = new Loop(framerate);

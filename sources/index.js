@@ -7,6 +7,7 @@ new Theatre({
     'framerate': 60,
     'loading': 'loading',
     'opening': 'demo',
+    'sharp': true,
     'size': {
 
         'width': 320,
