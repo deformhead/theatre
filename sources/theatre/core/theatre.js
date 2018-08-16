@@ -18,9 +18,6 @@ function Theatre(config) {
 
         const canvas = new Canvas('2d', 'theatre', size.width, size.height);
 
-        this.container = canvas.element;
-        this.context = canvas.context;
-
         if (sharp === true) {
 
             canvas.sharp();
@@ -28,13 +25,16 @@ function Theatre(config) {
 
         container.appendChild(canvas.element);
 
-        const loop = new Loop(framerate);
+        this.container = container;
+        this.context = canvas.context;
+        this.element = canvas.element;
 
         this.assets = {};
         this.scene = this.scenes[loading];
-
         this.scene.setup.call(this);
         this.scene.start.call(this);
+
+        const loop = new Loop(framerate);
 
         loop.update((timeframe) => this.scene.update.call(this, timeframe));
         loop.render(() => this.scene.render.call(this));
