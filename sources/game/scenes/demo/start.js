@@ -1,10 +1,10 @@
 import {Entity, World} from 'modules/world.js';
 
-import {Animation} from 'components/animation.js';
-import {Direction} from 'components/direction.js';
-import {Input} from 'components/input.js';
-import {Position} from 'components/position.js';
-import {Spritesheet} from 'components/spritesheet.js';
+import {Animation} from 'components/demo/animation.js';
+import {Direction} from 'components/demo/direction.js';
+import {Input} from 'components/demo/input.js';
+import {Position} from 'components/demo/position.js';
+import {Spritesheet} from 'components/demo/spritesheet.js';
 
 function start() {
 

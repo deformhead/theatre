@@ -1,7 +1,7 @@
-import {Animation} from 'components/animation.js';
-import {Direction} from 'components/direction.js';
-import {Run} from 'components/run.js';
-import {Spritesheet} from 'components/spritesheet.js';
+import {Animation} from 'components/demo/animation.js';
+import {Direction} from 'components/demo/direction.js';
+import {Run} from 'components/demo/run.js';
+import {Spritesheet} from 'components/demo/spritesheet.js';
 
 function input(entity) {
 
