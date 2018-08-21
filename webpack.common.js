@@ -1,7 +1,6 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 
@@ -49,6 +48,5 @@ module.exports = {
             },
             'title': 'Theatre'
         })
-        // new UglifyJSPlugin()
     ]
 };
