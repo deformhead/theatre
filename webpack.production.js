@@ -26,15 +26,6 @@ module.exports = merge(common, {
     },
     'plugins': [
 
-        new HtmlWebpackPlugin({
-
-            'minify': {
-
-                'collapseWhitespace': true,
-                'removeComments': true
-            },
-            'title': 'Theatre'
-        }),
         new JavaScriptObfuscator(),
         new UglifyJSPlugin({
 
