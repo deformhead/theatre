@@ -1,8 +1,5 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const JavaScriptObfuscator = require('webpack-obfuscator');
-
 module.exports = {
 
     'entry': './sources/index.js',
@@ -20,35 +17,8 @@ module.exports = {
             'scenes': path.resolve(__dirname, 'sources/game/scenes/'),
             'systems': path.resolve(__dirname, 'sources/game/systems/'),
 
-            'core': path.resolve(__dirname, 'sources/theatre/core'),
-            'modules': path.resolve(__dirname, 'sources/theatre/modules')
+            'core': path.resolve(__dirname, 'sources/theatre/core/'),
+            'modules': path.resolve(__dirname, 'sources/theatre/modules/')
         }
-    },
-    'module': {
-
-        'rules': [
-
-            {
-                'test': /\.ogg|\.png|\.wav$/,
-                'use': [
-
-                    {'loader': 'url-loader'}
-                ]
-            }
-        ]
-    },
-
-    'plugins': [
-
-        new HtmlWebpackPlugin({
-
-            'minify': {
-
-                'collapseWhitespace': true,
-                'removeComments': true
-            },
-            'title': 'Theatre'
-        }),
-        new JavaScriptObfuscator()
-    ]
+    }
 };
