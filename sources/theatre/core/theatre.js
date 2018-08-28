@@ -14,6 +14,8 @@ function Theatre(config) {
     const framerate = config.framerate || 60;
     const sharp = config.sharp || false;
 
+    let next = null;
+
     function initialize() {
 
         const canvas = new Canvas('2d', 'theatre', size.width, size.height);
@@ -36,7 +38,21 @@ function Theatre(config) {
 
         const loop = new Loop(framerate);
 
-        loop.update((timeframe) => this.scene.update.call(this, timeframe));
+        loop.update((timeframe) => {
+
+            this.scene.update.call(this, timeframe);
+
+            if (next !== null) {
+
+                this.scene.destroy.call(this);
+                this.scene = this.scenes[next];
+                this.scene.setup.call(this);
+                this.scene.start.call(this);
+
+                next = null;
+            }
+        });
+
         loop.render(() => this.scene.render.call(this));
 
         preload(assets, (assets) => {
@@ -63,10 +79,7 @@ function Theatre(config) {
 
     function load(scene) {
 
-        this.scene.destroy.call(this);
-        this.scene = this.scenes[scene];
-        this.scene.setup.call(this);
-        this.scene.start.call(this);
+        next = scene;
     }
 
     function restart() {
