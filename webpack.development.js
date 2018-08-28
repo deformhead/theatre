@@ -26,7 +26,6 @@ module.exports = merge(common, {
     'plugins': [
 
         new SourceMapDevToolPlugin(),
-        new JavaScriptObfuscator(),
         new UglifyJSPlugin({
 
             'sourceMap': true
