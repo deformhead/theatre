@@ -10,7 +10,7 @@ function Theatre(config) {
 
     const {container, loading, opening, size} = config;
 
-    const debug = config.debug || false;
+    const expose = config.expose || false;
     const framerate = config.framerate || 60;
     const sharp = config.sharp || false;
 
@@ -99,7 +99,7 @@ function Theatre(config) {
 
     initialize.call(this, config);
 
-    if (debug === true) {
+    if (expose === true) {
 
         window.theatre = this;
     }

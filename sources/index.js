@@ -3,7 +3,7 @@ import {Theatre} from 'core/theatre.js';
 new Theatre({
 
     'container': document.body,
-    'debug': true,
+    'expose': true,
     'framerate': 60,
     'loading': 'loading',
     'opening': 'demo',
