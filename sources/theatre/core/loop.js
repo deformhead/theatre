@@ -4,19 +4,23 @@ function Loop(framerate) {
 
     let elapsedTime = 0;
     let framed = false;
+    let lastRender = null;
     let lastUpdate = null;
 
     function render(handler) {
 
+        const currentRender = Date.now();
+
         if (framed !== false) {
 
-            handler();
+            handler(currentRender - lastRender);
         }
-
-        framed = true;
 
         // call user's render handler on each available frame
         requestAnimationFrame(this.render.bind(this, handler));
+
+        framed = true;
+        lastRender = currentRender;
     }
 
     function update(handler) {
@@ -38,10 +42,10 @@ function Loop(framerate) {
             handler(timeframe);
         }
 
-        lastUpdate = currentUpdate;
-
         // call user's update handler matching timeframe
         setTimeout(this.update.bind(this, handler), timeframe);
+
+        lastUpdate = currentUpdate;
     }
 
     this.render = render;
