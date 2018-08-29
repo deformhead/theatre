@@ -1,8 +1,7 @@
-function Spritesheet(image, animations) {
+function Spritesheet(animations) {
 
     this.name = 'spritesheet';
 
-    this.image = image;
     this.animations = animations;
 }
 

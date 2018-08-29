@@ -1,9 +1,8 @@
-function Animation(image, frames) {
+function Animation(frames, framerate) {
 
     this.name = 'animation';
 
-    this.image = image;
-    this.framerate = 8;
+    this.framerate = framerate || 8;
     this.frames = frames;
 
     this.frame = 0;

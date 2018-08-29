@@ -1,4 +1,6 @@
-import {Animation} from 'components/demo/animation.js';
+import {Animation} from 'components/common/animation.js';
+import {Image} from 'components/common/image.js';
+
 import {Direction} from 'components/demo/direction.js';
 import {Run} from 'components/demo/run.js';
 import {Spritesheet} from 'components/demo/spritesheet.js';
@@ -8,6 +10,7 @@ function input(entity) {
     this.inputs.forEach((input) => {
 
         const directionComponent = entity.get('direction');
+        const imageComponent = entity.get('image');
         const inputComponent = entity.get('input');
         const spritesheetComponent = entity.get('spritesheet');
 
@@ -20,9 +23,9 @@ function input(entity) {
 
                     entity.add([
 
-                        new Direction('UP'),
                         new Run(),
-                        new Animation(spritesheetComponent.image, spritesheetComponent.animations['RUN_UP'])
+                        new Direction('UP'),
+                        new Animation(spritesheetComponent.animations['RUN_UP'])
                     ]);
 
                 break;
@@ -31,9 +34,9 @@ function input(entity) {
 
                     entity.add([
 
-                        new Direction('RIGHT'),
                         new Run(),
-                        new Animation(spritesheetComponent.image, spritesheetComponent.animations['RUN_RIGHT'])
+                        new Direction('RIGHT'),
+                        new Animation(spritesheetComponent.animations['RUN_RIGHT'])
                     ]);
 
                 break;
@@ -42,9 +45,9 @@ function input(entity) {
 
                     entity.add([
 
-                        new Direction('DOWN'),
                         new Run(),
-                        new Animation(spritesheetComponent.image, spritesheetComponent.animations['RUN_DOWN'])
+                        new Direction('DOWN'),
+                        new Animation(spritesheetComponent.animations['RUN_DOWN'])
                     ]);
 
                 break;
@@ -53,9 +56,9 @@ function input(entity) {
 
                     entity.add([
 
-                        new Direction('LEFT'),
                         new Run(),
-                        new Animation(spritesheetComponent.image, spritesheetComponent.animations['RUN_LEFT'])
+                        new Direction('LEFT'),
+                        new Animation(spritesheetComponent.animations['RUN_LEFT'])
                     ]);
 
                 break;
@@ -72,8 +75,8 @@ function input(entity) {
 
                     if (directionComponent.direction === 'UP') {
 
-                        entity.remove(['run']);
-                        entity.add([new Animation(spritesheetComponent.image, spritesheetComponent.animations['IDLE_UP'])]);
+                        entity.remove(['animation', 'run']);
+                        imageComponent.frame = spritesheetComponent.animations['IDLE_UP'];
                     }
 
                 break;
@@ -82,8 +85,8 @@ function input(entity) {
 
                     if (directionComponent.direction === 'RIGHT') {
 
-                        entity.remove(['run']);
-                        entity.add([new Animation(spritesheetComponent.image, spritesheetComponent.animations['IDLE_RIGHT'])]);
+                        entity.remove(['animation', 'run']);
+                        imageComponent.frame = spritesheetComponent.animations['IDLE_RIGHT'];
                     }
 
                 break;
@@ -92,8 +95,8 @@ function input(entity) {
 
                     if (directionComponent.direction === 'DOWN') {
 
-                        entity.remove(['run']);
-                        entity.add([new Animation(spritesheetComponent.image, spritesheetComponent.animations['IDLE_DOWN'])]);
+                        entity.remove(['animation', 'run']);
+                        imageComponent.frame = spritesheetComponent.animations['IDLE_DOWN'];
                     }
 
                 break;
@@ -102,8 +105,8 @@ function input(entity) {
 
                     if (directionComponent.direction === 'LEFT') {
 
-                        entity.remove(['run']);
-                        entity.add([new Animation(spritesheetComponent.image, spritesheetComponent.animations['IDLE_LEFT'])]);
+                        entity.remove(['animation', 'run']);
+                        imageComponent.frame = spritesheetComponent.animations['IDLE_LEFT'];
                     }
 
                 break;
