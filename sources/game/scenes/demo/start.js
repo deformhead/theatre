@@ -1,11 +1,13 @@
 import {Entity, World} from 'modules/world.js';
 
+import {Image} from 'components/common/image.js';
+import {Position} from 'components/common/position.js';
+
 import {Alphabet} from 'components/demo/alphabet.js';
 import {Animation} from 'components/demo/animation.js';
 import {Data} from 'components/demo/data.js';
 import {Direction} from 'components/demo/direction.js';
 import {Input} from 'components/demo/input.js';
-import {Position} from 'components/demo/position.js';
 import {Spritesheet} from 'components/demo/spritesheet.js';
 import {Text} from 'components/demo/text.js';
 
@@ -22,6 +24,7 @@ function start() {
         new Direction('DOWN'),
         new Input(['KEY_UP', 'KEY_RIGHT', 'KEY_DOWN', 'KEY_LEFT']),
         new Position(this.size.width / 2 - 16, this.size.height / 2 - 16),
+        new Image(this.assets.images['wizard'], {'x': 96, 'y': 64, 'width': 32, 'height': 32}),
         new Animation(this.assets.images['wizard'], [{'x': 96, 'y': 64, 'width': 32, 'height': 32}]),
         new Spritesheet(
 
