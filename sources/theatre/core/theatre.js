@@ -53,7 +53,10 @@ function Theatre(config) {
             }
         });
 
-        loop.render(() => this.scene.render.call(this));
+        loop.render((timeframe) => {
+
+            this.scene.render.call(this, timeframe);
+        });
 
         preload(assets, (assets) => {
 
