@@ -22,20 +22,20 @@ function start() {
     this.world.add(new Entity('hero', [
 
         new Direction('DOWN'),
-        new Image(this.assets.images['wizard'], {'x': 96, 'y': 64, 'width': 32, 'height': 32}),
+        new Image(this.assets.images['wizard'], [32, 32], [3, 2]),
         new Input(['KEY_UP', 'KEY_RIGHT', 'KEY_DOWN', 'KEY_LEFT']),
         new Position(this.size.width / 2 - 16, this.size.height / 2 - 16),
         new Spritesheet({
 
-            'IDLE_UP': {'x': 96, 'y': 0, 'width': 32, 'height': 32},
-            'IDLE_RIGHT': {'x': 96, 'y': 32, 'width': 32, 'height': 32},
-            'IDLE_DOWN': {'x': 96, 'y': 64, 'width': 32, 'height': 32},
-            'IDLE_LEFT': {'x': 96, 'y': 96, 'width': 32, 'height': 32},
+            'IDLE_UP': [3, 0],
+            'IDLE_RIGHT': [3, 1],
+            'IDLE_DOWN': [3, 2],
+            'IDLE_LEFT': [3, 3],
 
-            'RUN_UP': [{'x': 0, 'y': 0, 'width': 32, 'height': 32}, {'x': 32, 'y': 0, 'width': 32, 'height': 32}, {'x': 64, 'y': 0, 'width': 32, 'height': 32}, {'x': 96, 'y': 0, 'width': 32, 'height': 32}],
-            'RUN_RIGHT': [{'x': 0, 'y': 32, 'width': 32, 'height': 32}, {'x': 32, 'y': 32, 'width': 32, 'height': 32}, {'x': 64, 'y': 32, 'width': 32, 'height': 32}, {'x': 96, 'y': 32, 'width': 32, 'height': 32}],
-            'RUN_DOWN': [{'x': 0, 'y': 64, 'width': 32, 'height': 32}, {'x': 32, 'y': 64, 'width': 32, 'height': 32}, {'x': 64, 'y': 64, 'width': 32, 'height': 32}, {'x': 96, 'y': 64, 'width': 32, 'height': 32}],
-            'RUN_LEFT': [{'x': 0, 'y': 96, 'width': 32, 'height': 32}, {'x': 32, 'y': 96, 'width': 32, 'height': 32}, {'x': 64, 'y': 96, 'width': 32, 'height': 32}, {'x': 96, 'y': 96, 'width': 32, 'height': 32}]
+            'RUN_UP': [[0, 0], [1, 0], [2, 0], [3, 0]],
+            'RUN_RIGHT': [[0, 1], [1, 1], [2, 1], [3, 1]],
+            'RUN_DOWN': [[0, 2], [1, 2], [2, 2], [3, 2]],
+            'RUN_LEFT': [[0, 3], [1, 3], [2, 3], [3, 3]]
         })
     ]));
 

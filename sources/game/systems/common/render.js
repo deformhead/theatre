@@ -6,8 +6,8 @@ function render(entity) {
     this.context.drawImage(
 
         imageComponent.image,
-        imageComponent.frame.x, imageComponent.frame.y, imageComponent.frame.width, imageComponent.frame.height,
-        positionComponent.x, positionComponent.y, imageComponent.frame.width, imageComponent.frame.height
+        imageComponent.frame[0] * imageComponent.size[0], imageComponent.frame[1] * imageComponent.size[1], imageComponent.size[0], imageComponent.size[1],
+        positionComponent.x, positionComponent.y, imageComponent.size[0], imageComponent.size[1]
     );
 }
 
