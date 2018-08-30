@@ -2,8 +2,6 @@ function render() {
 
     // console.log('render loading scene');
 
-    this.context.clearRect(0, 0, this.size.width, this.size.height);
-
     this.context.fillStyle = '#181a1f';
     this.context.fillRect(0, 0, this.size.width, this.size.height);
 
