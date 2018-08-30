@@ -9,8 +9,8 @@ function text(entity) {
         this.context.drawImage(
 
             alphabetComponent.image,
-            alphabetComponent.characters[character].x, alphabetComponent.characters[character].y, alphabetComponent.characters[character].width, alphabetComponent.characters[character].height,
-            positionComponent.x + index * alphabetComponent.characters[character].width, positionComponent.y, alphabetComponent.characters[character].width, alphabetComponent.characters[character].height
+            alphabetComponent.characters[character][0] * alphabetComponent.size[0], alphabetComponent.characters[character][1] * alphabetComponent.size[1], alphabetComponent.size[0], alphabetComponent.size[1],
+            positionComponent.x + index * alphabetComponent.size[0], positionComponent.y, alphabetComponent.size[0], alphabetComponent.size[1]
         );
     });
 }
