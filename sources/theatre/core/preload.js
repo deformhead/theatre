@@ -8,10 +8,18 @@ function preload(assets, handler) {
         // creates a promise for current asset preloading
         const promise = new Promise(function (resolve, reject) {
 
+            // if current asset is a dataset then preload it
+            if (asset.type === 'dataset') {
+
+                asset.content = asset.source;
+
+                resolve(asset);
+            }
+
             // if current asset is an image then preload it
             if (asset.type === 'image') {
 
-                var image = new Image();
+                const image = new Image();
 
                 image.src = asset.source;
 
@@ -27,7 +35,7 @@ function preload(assets, handler) {
             // if current asset is a sound then preload it
             else if (asset.type === 'sound') {
 
-                var sound = new Audio(asset.source);
+                const sound = new Audio(asset.source);
 
                 // when current sound is loaded then resolve current promise
                 sound.oncanplaythrough = function () {
