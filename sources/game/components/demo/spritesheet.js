@@ -1,8 +1,8 @@
-function Spritesheet(animations) {
+function Spritesheet(spritesheet) {
 
     this.name = 'spritesheet';
 
-    this.animations = animations;
+    this.spritesheet = spritesheet;
 }
 
 export {Spritesheet};

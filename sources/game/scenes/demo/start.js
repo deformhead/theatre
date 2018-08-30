@@ -5,8 +5,8 @@ import {Image} from 'components/common/image.js';
 import {Position} from 'components/common/position.js';
 
 import {Alphabet} from 'components/demo/alphabet.js';
-import {Data} from 'components/demo/data.js';
 import {Direction} from 'components/demo/direction.js';
+import {Framerate} from 'components/demo/framerate.js';
 import {Input} from 'components/demo/input.js';
 import {Spritesheet} from 'components/demo/spritesheet.js';
 import {Text} from 'components/demo/text.js';
@@ -15,7 +15,12 @@ function start() {
 
     console.log('start demo scene');
 
-    this.delta = 0;
+    this.delta = {
+
+        'render': 0,
+        'update': 0
+    };
+
     this.inputs.length = 0;
     this.world = new World();
 
@@ -43,32 +48,25 @@ function start() {
 
         new Position(8, 8),
         new Text('fps:60'),
-        new Data({
+        new Framerate(),
+        new Alphabet(this.assets.images['font'], [16, 32]),
+        new Spritesheet({
 
-            'elapsed': 0,
-            'frames': 0
-        }),
-        new Alphabet(
-
-            this.assets.images['font'],
-            [16, 32],
-            {
-                'f': [5, 7],
-                'p': [15, 7],
-                's': [18, 7],
-                ':': [22, 8],
-                '0': [0, 8],
-                '1': [1, 8],
-                '2': [2, 8],
-                '3': [3, 8],
-                '4': [4, 8],
-                '5': [5, 8],
-                '6': [6, 8],
-                '7': [7, 8],
-                '8': [8, 8],
-                '9': [9, 8]
-            }
-        )
+            'f': [5, 7],
+            'p': [15, 7],
+            's': [18, 7],
+            ':': [22, 8],
+            '0': [0, 8],
+            '1': [1, 8],
+            '2': [2, 8],
+            '3': [3, 8],
+            '4': [4, 8],
+            '5': [5, 8],
+            '6': [6, 8],
+            '7': [7, 8],
+            '8': [8, 8],
+            '9': [9, 8]
+        })
     ]));
 }
 

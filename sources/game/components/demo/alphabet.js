@@ -1,11 +1,9 @@
-function Alphabet(image, size, characters) {
+function Alphabet(image, size) {
 
     this.name = 'alphabet';
 
     this.image = image;
-
     this.size = size;
-    this.characters = characters;
 }
 
 export {Alphabet};

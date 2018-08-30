@@ -3,9 +3,10 @@ import {DOWN, LEFT, RIGHT, UP} from 'modules/keycodes.js';
 import {System} from 'modules/world.js';
 
 import {animate} from 'systems/common/animate.js';
+import {image} from 'systems/common/image.js';
 import {reframe} from 'systems/common/reframe.js';
-import {render} from 'systems/common/render.js';
 
+import {framerate} from 'systems/demo/framerate.js';
 import {input} from 'systems/demo/input.js';
 import {text} from 'systems/demo/text.js';
 
@@ -19,11 +20,13 @@ function setup() {
 
     this.systems = {
 
+        'framerate': new System(['framerate'], framerate.bind(this)),
+        'image': new System(['image', 'position'], image.bind(this)),
+        'text': new System(['alphabet', 'position'], text.bind(this)),
+
         'animate': new System(['animation'], animate.bind(this)),
         'input': new System(['input'], input.bind(this)),
-        'reframe': new System(['animation', 'image'], reframe.bind(this)),
-        'render': new System(['image', 'position'], render.bind(this)),
-        'text': new System(['alphabet', 'position'], text.bind(this))
+        'reframe': new System(['animation', 'image'], reframe.bind(this))
     };
 }
 

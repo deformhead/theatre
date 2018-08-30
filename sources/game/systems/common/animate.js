@@ -4,7 +4,7 @@ function animate(entity) {
 
     if (animationComponent.frames.length > 1) {
 
-        animationComponent.elapsed += this.delta;
+        animationComponent.elapsed += this.delta.update;
 
         const duration = 1000 / animationComponent.framerate;
 

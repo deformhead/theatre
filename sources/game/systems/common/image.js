@@ -1,4 +1,4 @@
-function render(entity) {
+function image(entity) {
 
     const imageComponent = entity.get('image');
     const positionComponent = entity.get('position');
@@ -11,4 +11,4 @@ function render(entity) {
     );
 }
 
-export {render};
+export {image};

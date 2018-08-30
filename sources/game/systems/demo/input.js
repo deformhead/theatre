@@ -25,7 +25,7 @@ function input(entity) {
 
                         new Run(),
                         new Direction('UP'),
-                        new Animation(spritesheetComponent.animations['RUN_UP'])
+                        new Animation(spritesheetComponent.spritesheet['RUN_UP'])
                     ]);
 
                 break;
@@ -36,7 +36,7 @@ function input(entity) {
 
                         new Run(),
                         new Direction('RIGHT'),
-                        new Animation(spritesheetComponent.animations['RUN_RIGHT'])
+                        new Animation(spritesheetComponent.spritesheet['RUN_RIGHT'])
                     ]);
 
                 break;
@@ -47,7 +47,7 @@ function input(entity) {
 
                         new Run(),
                         new Direction('DOWN'),
-                        new Animation(spritesheetComponent.animations['RUN_DOWN'])
+                        new Animation(spritesheetComponent.spritesheet['RUN_DOWN'])
                     ]);
 
                 break;
@@ -58,7 +58,7 @@ function input(entity) {
 
                         new Run(),
                         new Direction('LEFT'),
-                        new Animation(spritesheetComponent.animations['RUN_LEFT'])
+                        new Animation(spritesheetComponent.spritesheet['RUN_LEFT'])
                     ]);
 
                 break;
@@ -76,7 +76,7 @@ function input(entity) {
                     if (directionComponent.direction === 'UP') {
 
                         entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.animations['IDLE_UP'];
+                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_UP'];
                     }
 
                 break;
@@ -86,7 +86,7 @@ function input(entity) {
                     if (directionComponent.direction === 'RIGHT') {
 
                         entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.animations['IDLE_RIGHT'];
+                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_RIGHT'];
                     }
 
                 break;
@@ -96,7 +96,7 @@ function input(entity) {
                     if (directionComponent.direction === 'DOWN') {
 
                         entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.animations['IDLE_DOWN'];
+                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_DOWN'];
                     }
 
                 break;
@@ -106,7 +106,7 @@ function input(entity) {
                     if (directionComponent.direction === 'LEFT') {
 
                         entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.animations['IDLE_LEFT'];
+                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_LEFT'];
                     }
 
                 break;
