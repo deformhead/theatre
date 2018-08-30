@@ -1,4 +1,4 @@
-function render(delta) {
+function render() {
 
     // console.log('render loading scene');
 

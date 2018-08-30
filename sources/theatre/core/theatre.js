@@ -32,6 +32,10 @@ function Theatre(config) {
         this.element = canvas.element;
 
         this.assets = {};
+        this.delta = {};
+        this.delta.render = 0;
+        this.delta.update = 0;
+
         this.scene = this.scenes[loading];
         this.scene.setup.call(this);
         this.scene.start.call(this);
@@ -40,7 +44,8 @@ function Theatre(config) {
 
         loop.update((timeframe) => {
 
-            this.scene.update.call(this, timeframe);
+            this.delta.update = timeframe;
+            this.scene.update.call(this);
 
             if (next !== null) {
 
@@ -55,7 +60,8 @@ function Theatre(config) {
 
         loop.render((timeframe) => {
 
-            this.scene.render.call(this, timeframe);
+            this.delta.render = timeframe;
+            this.scene.render.call(this);
         });
 
         preload(assets, (assets) => {

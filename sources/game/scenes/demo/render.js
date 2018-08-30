@@ -1,8 +1,6 @@
-function render(delta) {
+function render() {
 
     // console.log('render demo scene');
-
-    this.delta.render = delta;
 
     this.context.clearRect(0, 0, this.size.width, this.size.height);
 

@@ -15,12 +15,6 @@ function start() {
 
     console.log('start demo scene');
 
-    this.delta = {
-
-        'render': 0,
-        'update': 0
-    };
-
     this.inputs.length = 0;
     this.world = new World();
 

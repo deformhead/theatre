@@ -1,4 +1,4 @@
-function update(delta) {
+function update() {
 
     // console.log('update loading scene');
 }
