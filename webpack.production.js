@@ -1,9 +1,5 @@
-const path = require('path');
-
-const webpack = require('webpack');
 const merge = require('webpack-merge');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const JavaScriptObfuscator = require('webpack-obfuscator');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
