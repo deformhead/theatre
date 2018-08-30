@@ -24,18 +24,7 @@ function start() {
         new Image(this.assets.images['wizard'], [32, 32], [3, 2]),
         new Input(['KEY_UP', 'KEY_RIGHT', 'KEY_DOWN', 'KEY_LEFT']),
         new Position(this.size.width / 2 - 16, this.size.height / 2 - 16),
-        new Spritesheet({
-
-            'IDLE_UP': [3, 0],
-            'IDLE_RIGHT': [3, 1],
-            'IDLE_DOWN': [3, 2],
-            'IDLE_LEFT': [3, 3],
-
-            'RUN_UP': [[0, 0], [1, 0], [2, 0], [3, 0]],
-            'RUN_RIGHT': [[0, 1], [1, 1], [2, 1], [3, 1]],
-            'RUN_DOWN': [[0, 2], [1, 2], [2, 2], [3, 2]],
-            'RUN_LEFT': [[0, 3], [1, 3], [2, 3], [3, 3]]
-        })
+        new Spritesheet(this.assets.datasets['wizard'])
     ]));
 
     this.world.add(new Entity('framerate', [
@@ -44,23 +33,7 @@ function start() {
         new Text('fps:60'),
         new Framerate(),
         new Alphabet(this.assets.images['font'], [16, 32]),
-        new Spritesheet({
-
-            'f': [5, 7],
-            'p': [15, 7],
-            's': [18, 7],
-            ':': [22, 8],
-            '0': [0, 8],
-            '1': [1, 8],
-            '2': [2, 8],
-            '3': [3, 8],
-            '4': [4, 8],
-            '5': [5, 8],
-            '6': [6, 8],
-            '7': [7, 8],
-            '8': [8, 8],
-            '9': [9, 8]
-        })
+        new Spritesheet(this.assets.datasets['font'])
     ]));
 }
 
