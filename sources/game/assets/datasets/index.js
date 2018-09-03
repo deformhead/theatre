@@ -1,15 +1,12 @@
-import {font} from './font.js';
-import {wizard} from './wizard.js';
-
 const datasets = [
 
     {
         'name': 'font',
-        'source': font
+        'source': require('./font.json')
     },
     {
         'name': 'wizard',
-        'source': wizard
+        'source': require('./wizard.json')
     }
 ];
 
