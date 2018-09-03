@@ -70,10 +70,15 @@ function Theatre(config) {
 
                 if (typeof this.assets[asset.type + 's'] === 'undefined') {
 
-                    this.assets[asset.type + 's'] = [];
+                    this.assets[asset.type + 's'] = {};
                 }
 
-                this.assets[asset.type + 's'][asset.name] = asset.content;
+                if (typeof this.assets[asset.type + 's'][asset.scope] === 'undefined') {
+
+                    this.assets[asset.type + 's'][asset.scope] = {};
+                }
+
+                this.assets[asset.type + 's'][asset.scope][asset.name] = asset.content;
             });
 
             this.scene.destroy.call(this);

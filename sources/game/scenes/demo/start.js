@@ -21,10 +21,10 @@ function start() {
     this.world.add(new Entity('hero', [
 
         new Direction('DOWN'),
-        new Image(this.assets.images['wizard'], [32, 32], [3, 2]),
+        new Image(this.assets.images.demo['wizard'], [32, 32], [3, 2]),
         new Input(['KEY_UP', 'KEY_RIGHT', 'KEY_DOWN', 'KEY_LEFT']),
         new Position(this.size.width / 2 - 16, this.size.height / 2 - 16),
-        new Spritesheet(this.assets.datasets['wizard'])
+        new Spritesheet(this.assets.datasets.demo['wizard'])
     ]));
 
     this.world.add(new Entity('framerate', [
@@ -32,8 +32,8 @@ function start() {
         new Position(8, 8),
         new Text('fps:60'),
         new Framerate(),
-        new Alphabet(this.assets.images['font'], [16, 32]),
-        new Spritesheet(this.assets.datasets['font'])
+        new Alphabet(this.assets.images.demo['font'], [16, 32]),
+        new Spritesheet(this.assets.datasets.demo['font'])
     ]));
 }
 

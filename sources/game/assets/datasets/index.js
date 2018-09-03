@@ -2,11 +2,15 @@ const datasets = [
 
     {
         'name': 'font',
-        'source': require('./font.json')
+        'scope': 'demo',
+        'source': require('./demo/font.json'),
+        'type': 'dataset'
     },
     {
         'name': 'wizard',
-        'source': require('./wizard.json')
+        'scope': 'demo',
+        'source': require('./demo/wizard.json'),
+        'type': 'dataset'
     }
 ];
 
