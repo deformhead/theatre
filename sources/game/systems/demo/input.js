@@ -1,7 +1,6 @@
-import {Animation} from 'components/common/animation.js';
-import {Image} from 'components/common/image.js';
-
+import {Animation} from 'components/demo/animation.js';
 import {Direction} from 'components/demo/direction.js';
+import {Image} from 'components/demo/image.js';
 import {Run} from 'components/demo/run.js';
 import {Spritesheet} from 'components/demo/spritesheet.js';
 

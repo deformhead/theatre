@@ -1,13 +1,12 @@
 import {Entity, World} from 'modules/world.js';
 
-import {Animation} from 'components/common/animation.js';
-import {Image} from 'components/common/image.js';
-import {Position} from 'components/common/position.js';
-
 import {Alphabet} from 'components/demo/alphabet.js';
+import {Animation} from 'components/demo/animation.js';
 import {Direction} from 'components/demo/direction.js';
 import {Framerate} from 'components/demo/framerate.js';
+import {Image} from 'components/demo/image.js';
 import {Input} from 'components/demo/input.js';
+import {Position} from 'components/demo/position.js';
 import {Spritesheet} from 'components/demo/spritesheet.js';
 import {Text} from 'components/demo/text.js';
 
