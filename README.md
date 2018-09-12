@@ -9,7 +9,9 @@
 
 Theatre game framework is built in plain javascrit. It helps you create games quickly.
 
-This repository is a Ready-To-Use demo. It helps you understand how to generate, install and start a Theatre game.
+This repository is an installed, Ready-To-Use Theatre demo.
+
+You could simply clone this demo to take a look at the lifecycle and how things works with no install required, but we recommand to generate and install your own new Theatre game.
 
 ## Installation
 
