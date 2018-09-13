@@ -23,7 +23,7 @@ Start a console then run :
 
 ```
 $ npm install -g yo
-$ npm install -g generator-theatre@0.3.0
+$ npm install -g generator-theatre@0.4.0
 ```
 
 Create the folder for your new project :
