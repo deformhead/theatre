@@ -1,6 +1,4 @@
 {
-    "name": "theatre",
-    "version": "0.1.0",
     "description": "javascript es6 game framework",
     "main": "sources/index.js",
     "scripts": {
