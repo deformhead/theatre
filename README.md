@@ -55,15 +55,13 @@ We have created a `demo` scene to help you understand Theatre lifecycle.
 
 #### Quick start
 
-Start bundling the game running :
+To start a development server, start a console then run :
 
 ```
 $ npm start
 ```
 
-It creates the [`index.js`](./docs/index.js) file (your game bundled) in development mode.
-
-Take a look at the full demo opening the [`index.html`](./docs/index.html) file in your browser.
+It opens a new browser tab serving your game (*`webpack-dev-server` doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
 
 ## [Change Log](./CHANGELOG.md)
 
