@@ -1,6 +1,3 @@
-import {random} from 'modules/random.js';
-import {shuffle} from 'modules/shuffle.js';
-
 function update() {
 
     // console.log('update demo scene');

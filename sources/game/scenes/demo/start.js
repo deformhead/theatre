@@ -1,7 +1,6 @@
 import {Entity, World} from 'modules/world.js';
 
 import {Alphabet} from 'components/demo/alphabet.js';
-import {Animation} from 'components/demo/animation.js';
 import {Direction} from 'components/demo/direction.js';
 import {Framerate} from 'components/demo/framerate.js';
 import {Image} from 'components/demo/image.js';
