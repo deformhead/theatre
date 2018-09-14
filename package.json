@@ -1,24 +1,10 @@
 {
-    "description": "javascript es6 game framework",
-    "main": "sources/index.js",
-    "scripts": {
-
-        "build": "webpack --config webpack.production.js",
-        "start": "webpack-dev-server --config webpack.development.js",
-        "test": "echo \"Hello, friend.\" && exit 0"
-    },
-    "repository": {
-
-        "type": "git",
-        "url": "git+https://github.com/deformhead/Theatre.git"
-    },
     "author": "deformhead",
-    "license": "MIT",
     "bugs": {
 
         "url": "https://github.com/deformhead/Theatre/issues"
     },
-    "homepage": "https://github.com/deformhead/Theatre#readme",
+    "description": "javascript es6 game framework",
     "devDependencies": {
 
         "uglifyjs-webpack-plugin": "1.0.1",
@@ -29,5 +15,26 @@
         "webpack-merge": "4.1.4",
         "webpack-notifier": "1.6.0",
         "webpack-obfuscator": "0.18.0"
+    },
+    "homepage": "https://github.com/deformhead/Theatre#readme",
+    "keywords": [
+
+        "javascript",
+        "es6",
+        "game",
+        "framework"
+    ],
+    "license": "MIT",
+    "main": "sources/index.js",
+    "repository": {
+
+        "type": "git",
+        "url": "git+https://github.com/deformhead/Theatre.git"
+    },
+    "scripts": {
+
+        "build": "webpack --config webpack.production.js",
+        "start": "webpack-dev-server --config webpack.development.js",
+        "test": "echo \"Hello, friend.\" && exit 0"
     }
 }
