@@ -9,9 +9,9 @@
 
 Theatre game framework is built in plain javascrit. It helps you create games quickly.
 
-This repository is a **demo on top of a generated Theatre game project**.
+> This repository is a **demo on top of a generated Theatre game project**.
 
-You could simply clone and install this demo to take a look at the lifecycle and how things works, but **we strongly recommand to generate and install your own new Theatre game project**.
+> You could simply clone and install this demo to take a look at the lifecycle and how things works, but **we strongly recommand to generate and install your own new Theatre game project**.
 
 ## Installation
 
@@ -62,6 +62,74 @@ $ npm start
 ```
 
 It opens a new browser tab serving your game (*`webpack-dev-server` doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
+
+## Tree structure
+
+In the root folder, you'll find this main tree structure :
+
+```
+docs/
+|-- index.css
+|-- index.html
+'-- index.js
+sources/
+|-- game/
+|   |-- assets/
+|   '-- scenes/
+|-- theatre/
+|   |-- core/
+|   '-- modules/
+'-- index.js
+webpack.<config>.js
+```
+
+#### Configuration files
+
+You'll find there three `webpack` configuration files (files like `webpack.<config>.js`) :
+
+[`webpack.common.js`](./webpack.common.js) - Common `webpack` configuration for both `development` and `production` environments.
+
+[`webpack.development.js`](./webpack.development.js) - Common `webpack` configuration for `development` environment.
+
+[`webpack.production.js`](./webpack.production.js) - Common `webpack` configuration for `production` environment.
+
+#### Sources folder
+
+The [`sources/`](./sources/) folder contains the code base for your game :
+
+```
+sources/
+|-- game/
+|   |-- assets/
+|   '-- scenes/
+|-- theatre/
+|   |-- core/
+|   '-- modules/
+'-- index.js
+```
+
+[`sources/theatre/`](./sources/theatre/) - The framework (the [`core`](./sources/theatre/core/) and useful [`modules`](./sources/theatre/modules/)).
+
+[`sources/game/`](./sources/game/) - All your source files (all [`assets`](./sources/game/assets/) and [`scenes`](./sources/game/scenes/)).
+
+[`sources/index.js`](./sources/index.js) - The entry point of your game with your presets.
+
+#### Build folder
+
+The [`docs/`](./docs/) folder contains your game preview :
+
+```
+docs/
+|-- index.css
+|-- index.html
+'-- index.js
+```
+
+[`docs/index.js`](./docs/index.js) - The build of your game.
+
+[`docs/index.html`](./docs/index.html) - The default HTML5 preview for your game.
+
+[`docs/index.css`](./docs/index.css) - The default style of the preview of your game.
 
 ## [Change Log](./CHANGELOG.md)
 
