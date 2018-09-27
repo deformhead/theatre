@@ -1,4 +1,3 @@
-
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 # Theatre
@@ -49,6 +48,8 @@ Start a console then run :
 $ npm install
 ```
 
+A `postinstall` NPM script executes a [production build](#production-build) of your game.
+
 ## Usage
 
 We have created a `demo` scene to help you understand Theatre lifecycle.
@@ -61,7 +62,17 @@ To start a development server, start a console then run :
 $ npm start
 ```
 
-It opens a new browser tab serving your game (*[`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
+It opens a new browser tab serving your game from the [`docs/`](./docs/) folder (*[`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
+
+#### Production build
+
+To build your game for production, start a console then run :
+
+```
+$ npm run build
+```
+
+It creates a production build of your game in the [`docs/`](./docs/) folder (the [`docs/index.js`](./docs/index.js) file).
 
 ## Tree structure
 
@@ -125,7 +136,7 @@ docs/
 '-- index.js
 ```
 
-[`docs/index.js`](./docs/index.js) - The build of your game.
+[`docs/index.js`](./docs/index.js) - The build ([production build](#production-build)) of your game.
 
 [`docs/index.html`](./docs/index.html) - The default HTML5 preview for your game.
 
