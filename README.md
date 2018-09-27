@@ -15,7 +15,7 @@ Theatre game framework is built in plain javascrit. It helps you create games qu
 
 ## Installation
 
-First, you'll need to use our Yeoman generator (see : [`generator-theatre`](https://github.com/theatrejs/generator-theatre)) to scaffold a new Theatre project.
+First, you'll need to use our [Yeoman](http://yeoman.io/) generator (see : [`generator-theatre`](https://github.com/theatrejs/generator-theatre)) to scaffold a new Theatre project.
 
 #### Generate the project's structure
 
@@ -61,7 +61,7 @@ To start a development server, start a console then run :
 $ npm start
 ```
 
-It opens a new browser tab serving your game (*`webpack-dev-server` doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
+It opens a new browser tab serving your game (*[`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
 
 ## Tree structure
 
@@ -85,13 +85,13 @@ webpack.<config>.js
 
 #### Configuration files
 
-You'll find there three `webpack` configuration files (files like `webpack.<config>.js`) :
+You'll find there three [Webpack](https://webpack.js.org/) configuration files (files like `webpack.<config>.js`) :
 
-[`webpack.common.js`](./webpack.common.js) - Common `webpack` configuration for both `development` and `production` environments.
+[`webpack.common.js`](./webpack.common.js) - Webpack configuration for both `development` and `production` environments.
 
-[`webpack.development.js`](./webpack.development.js) - Common `webpack` configuration for `development` environment.
+[`webpack.development.js`](./webpack.development.js) - Webpack configuration for `development` environment.
 
-[`webpack.production.js`](./webpack.production.js) - Common `webpack` configuration for `production` environment.
+[`webpack.production.js`](./webpack.production.js) - Webpack configuration for `production` environment.
 
 #### Sources folder
 
