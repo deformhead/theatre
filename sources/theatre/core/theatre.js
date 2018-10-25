@@ -10,7 +10,8 @@ function Theatre(config) {
     const framerate = config.framerate || 60;
     const sharp = config.sharp || false;
 
-    let next = null;
+    let loading = null;
+    let restarting = false;
 
     function initialize() {
 
@@ -43,14 +44,25 @@ function Theatre(config) {
             this.delta.update = timeframe;
             this.scene.update.call(this);
 
-            if (next !== null) {
+            if (restarting === true) {
+
+                this.scene.start.call(this);
+
+                restarting = false;
+
+                return;
+            }
+
+            if (loading !== null) {
 
                 this.scene.destroy.call(this);
-                this.scene = this.scenes[next];
+                this.scene = this.scenes[loading];
                 this.scene.setup.call(this);
                 this.scene.start.call(this);
 
-                next = null;
+                loading = null;
+
+                return;
             }
         });
 
@@ -85,19 +97,19 @@ function Theatre(config) {
 
     function load(scene) {
 
-        next = scene;
+        loading = scene;
     }
 
     function restart() {
 
-        this.scene.start.call(this);
+        restarting = true;
     }
 
     this.preloading = false;
     this.scenes = scenes;
     this.size = size;
     this.state = {};
-    this.version = '0.8.0';
+    this.version = '0.9.0';
 
     this.load = load;
     this.restart = restart;
