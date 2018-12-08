@@ -9,6 +9,7 @@ function Theatre(config) {
     const expose = config.expose || false;
     const framerate = config.framerate || 60;
     const sharp = config.sharp || false;
+    const speed = config.speed || 1;
 
     let loading = null;
     let restarting = false;
@@ -37,7 +38,7 @@ function Theatre(config) {
         this.scene.setup.call(this);
         this.scene.start.call(this);
 
-        const loop = new Loop(framerate);
+        const loop = new Loop(framerate, speed);
 
         loop.update((timeframe) => {
 
@@ -92,6 +93,7 @@ function Theatre(config) {
             this.preloading = false;
         });
 
+        this.loop = loop;
         this.preloading = true;
     }
 
@@ -109,7 +111,7 @@ function Theatre(config) {
     this.scenes = scenes;
     this.size = size;
     this.state = {};
-    this.version = '0.10.0';
+    this.version = '0.11.0';
 
     this.load = load;
     this.restart = restart;
