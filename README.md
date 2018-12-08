@@ -258,6 +258,7 @@ THEATRE                   LOADING SCENE
 | [`context`](#context)       | gives you access to the `canvas` context of your game                         |
 | [`delta`](#delta)           | gives you access to the elapsed time between each tick of Theatre's game loop |
 | [`element`](#element)       | gives you access to the DOM element of the `canvas`                           |
+| [`loop`](#loop)             | gives you access to the game loop                                             |
 | [`preloading`](#preloading) | lets you know when assets are preloaded                                       |
 | [`scene`](#scene)           | gives you access to current scene module                                      |
 | [`scenes`](#scenes)         | gives you access to your game scenes modules                                  |
@@ -286,7 +287,8 @@ new Theatre({
 
         'width': 320,
         'height': 288
-    }
+    },
+    'speed': 1
 });
 ```
 
@@ -309,6 +311,7 @@ The `config` object allows you to set the defaults of your Theatre game. You can
 | `scenes`    | `object`           | yes       |         | your game scenes                                                                 |
 | `sharp`     | `boolean`          | no        | false   | should the game have a sharp rendering (great for pixel art)                     |
 | `size`      | `object`           | yes       |         | define there the `size.width` and `size.height` (positive integers) of your game |
+| `speed`     | `positive number`  | no        | 1       | define here the speed factor of the logic of your game                           |
 
 ---
 
@@ -437,6 +440,24 @@ Gives you access to the DOM element of the `canvas`.
 // gets the DOM element of the canvas
 const element = this.element;
 ```
+
+---
+
+#### `loop`
+
+Gives you access to the game loop of your game.
+
+###### Usage :
+
+```javascript
+// speed up your game logic
+this.loop.speed *= 2;
+
+// change your game logic framerate
+this.loop.framerate = 30;
+```
+
+> This is convenient for debugging purpose.
 
 ---
 
