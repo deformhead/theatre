@@ -1,10 +1,16 @@
+import {system} from 'modules/world.js';
+
+import {animate} from 'systems/demo/animate.js';
+import {input} from 'systems/demo/input.js';
+import {reframe} from 'systems/demo/reframe.js';
+
 function update() {
 
     // console.log('update demo scene');
 
-    this.systems.input.update.call(this, this.world.entities);
-    this.systems.animate.update.call(this, this.world.entities);
-    this.systems.reframe.update.call(this, this.world.entities);
+    system(this.world.entities, ['input'], input.bind(this));
+    system(this.world.entities, ['animation'], animate.bind(this));
+    system(this.world.entities, ['animation', 'image'], reframe.bind(this));
 
     this.inputs.length = 0;
 }

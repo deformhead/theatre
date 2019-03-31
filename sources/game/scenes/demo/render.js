@@ -1,3 +1,9 @@
+import {system} from 'modules/world.js';
+
+import {framerate} from 'systems/demo/framerate.js';
+import {image} from 'systems/demo/image.js';
+import {text} from 'systems/demo/text.js';
+
 function render() {
 
     // console.log('render demo scene');
@@ -5,9 +11,9 @@ function render() {
     this.context.fillStyle = '#a8c0b0';
     this.context.fillRect(0, 0, this.size.width, this.size.height);
 
-    this.systems.framerate.update.call(this, this.world.entities);
-    this.systems.image.update.call(this, this.world.entities);
-    this.systems.text.update.call(this, this.world.entities);
+    system(this.world.entities, ['framerate'], framerate.bind(this));
+    system(this.world.entities, ['image', 'position'], image.bind(this));
+    system(this.world.entities, ['alphabet', 'position'], text.bind(this));
 }
 
 export {render};

@@ -8,7 +8,6 @@ function destroy() {
     delete this.world;
 
     delete this.keyboard;
-    delete this.systems;
 
     console.log('-------');
 }
