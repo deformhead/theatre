@@ -558,7 +558,7 @@ Gives you access to the Theatre version of your game.
 ###### Usage :
 
 ```javascript
-// gets current the Theatre version of your game (like '1.0.0')
+// gets the current Theatre version of your game (like '1.0.0')
 const version = this.version;
 ```
 
