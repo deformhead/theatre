@@ -11,9 +11,9 @@ function render() {
     this.context.fillStyle = '#a8c0b0';
     this.context.fillRect(0, 0, this.size.width, this.size.height);
 
-    system(this.world.entities, ['framerate'], framerate.bind(this));
-    system(this.world.entities, ['image', 'position'], image.bind(this));
-    system(this.world.entities, ['alphabet', 'position'], text.bind(this));
+    this.world.system(['framerate'], framerate);
+    this.world.system(['image', 'position'], image);
+    this.world.system(['alphabet', 'position'], text);
 }
 
 export {render};

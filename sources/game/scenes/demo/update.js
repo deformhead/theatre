@@ -8,9 +8,9 @@ function update() {
 
     // console.log('update demo scene');
 
-    system(this.world.entities, ['input'], input.bind(this));
-    system(this.world.entities, ['animation'], animate.bind(this));
-    system(this.world.entities, ['animation', 'image'], reframe.bind(this));
+    this.world.system(['input'], input);
+    this.world.system(['animation'], animate);
+    this.world.system(['animation', 'image'], reframe);
 
     this.inputs.length = 0;
 }

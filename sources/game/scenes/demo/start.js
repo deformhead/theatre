@@ -14,7 +14,7 @@ function start() {
     console.log('start demo scene');
 
     this.inputs.length = 0;
-    this.world = new World();
+    this.world = new World(this);
 
     this.world.add(new Entity('hero', [
 
