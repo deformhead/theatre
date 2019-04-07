@@ -180,7 +180,21 @@ const asset = {
 | `source` | `mixed`                                   | source of your asset |
 | `type`   | `string of ['dataset', 'image', 'sound']` | source of your asset |
 
-> Theatre will expose your asset's loaded content in `this.assets.<type>s.<scope>.<name>`.
+###### Usage :
+
+Theatre will expose a getter function for your asset in `this.assets.<type>s.<scope>.<name>`.
+
+An example for a sound :
+
+```javascript
+const blastGetter = this.assets.sounds.common.blast;
+
+// plays simultaneously the same sound as many times as you want
+blastGetter().play();
+blastGetter().play();
+```
+
+> **WARNING** : It's better for a sound to be played **each time** from a **fresh call** of its `getter()` function because of the `Web Audio API` which is not able to play **more than once at a time** the same song.
 
 ## Scene structure
 
