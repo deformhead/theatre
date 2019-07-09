@@ -1,5 +1,3 @@
-import {system} from 'modules/world.js';
-
 import {animate} from 'systems/demo/animate.js';
 import {input} from 'systems/demo/input.js';
 import {reframe} from 'systems/demo/reframe.js';

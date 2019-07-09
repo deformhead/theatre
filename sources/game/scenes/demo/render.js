@@ -1,5 +1,3 @@
-import {system} from 'modules/world.js';
-
 import {framerate} from 'systems/demo/framerate.js';
 import {image} from 'systems/demo/image.js';
 import {text} from 'systems/demo/text.js';
