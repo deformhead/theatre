@@ -1,5 +1,6 @@
 import {Canvas} from 'core/canvas.js';
 import {Loop} from 'core/loop.js';
+
 import {preload} from 'core/preload.js';
 
 function Theatre(config) {
@@ -16,7 +17,7 @@ function Theatre(config) {
 
     function initialize() {
 
-        const canvas = new Canvas('2d', 'theatre', size.width, size.height);
+        const canvas = new Canvas('2d', 'theatre', this.size.width, this.size.height);
 
         if (sharp === true) {
 
@@ -111,7 +112,7 @@ function Theatre(config) {
     this.scenes = scenes;
     this.size = size;
     this.state = {};
-    this.version = '0.20.0';
+    this.version = '0.29.0';
 
     this.load = load;
     this.restart = restart;
