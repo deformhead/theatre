@@ -1,14 +1,17 @@
-function image(entity) {
+function image(entities) {
 
-    const imageComponent = entity.get('image');
-    const positionComponent = entity.get('position');
+    Object.entries(entities).forEach(([name, entity]) => {
 
-    this.context.drawImage(
+        const imageComponent = entity.get('image');
+        const positionComponent = entity.get('position');
 
-        imageComponent.image,
-        imageComponent.frame[0] * imageComponent.size[0], imageComponent.frame[1] * imageComponent.size[1], imageComponent.size[0], imageComponent.size[1],
-        positionComponent.x, positionComponent.y, imageComponent.size[0], imageComponent.size[1]
-    );
+        this.context.drawImage(
+
+            imageComponent.image,
+            imageComponent.frame[0] * imageComponent.size[0], imageComponent.frame[1] * imageComponent.size[1], imageComponent.size[0], imageComponent.size[1],
+            positionComponent.x, positionComponent.y, imageComponent.size[0], imageComponent.size[1]
+        );
+    });
 }
 
 export {image};

@@ -1,18 +1,21 @@
-function text(entity) {
+function text(entities) {
 
-    const alphabetComponent = entity.get('alphabet');
-    const positionComponent = entity.get('position');
-    const spritesheetComponent = entity.get('spritesheet');
-    const textComponent = entity.get('text');
+    Object.entries(entities).forEach(([name, entity]) => {
 
-    textComponent.text.split('').forEach((character, index) => {
+        const alphabetComponent = entity.get('alphabet');
+        const positionComponent = entity.get('position');
+        const spritesheetComponent = entity.get('spritesheet');
+        const textComponent = entity.get('text');
 
-        this.context.drawImage(
+        textComponent.text.split('').forEach((character, index) => {
 
-            alphabetComponent.image,
-            spritesheetComponent.spritesheet[character][0] * alphabetComponent.size[0], spritesheetComponent.spritesheet[character][1] * alphabetComponent.size[1], alphabetComponent.size[0], alphabetComponent.size[1],
-            positionComponent.x + index * alphabetComponent.size[0], positionComponent.y, alphabetComponent.size[0], alphabetComponent.size[1]
-        );
+            this.context.drawImage(
+
+                alphabetComponent.image,
+                spritesheetComponent.spritesheet[character][0] * alphabetComponent.size[0], spritesheetComponent.spritesheet[character][1] * alphabetComponent.size[1], alphabetComponent.size[0], alphabetComponent.size[1],
+                positionComponent.x + index * alphabetComponent.size[0], positionComponent.y, alphabetComponent.size[0], alphabetComponent.size[1]
+            );
+        });
     });
 }
 

@@ -19,6 +19,8 @@ Theatre game framework is built in plain javascrit. It helps you create games qu
     - [Install the project](#install-the-project)
 - [Usage](#usage)
     - [Quick start](#quick-start)
+    - [Distribution](#distribution)
+    - [Electron preview](#electron-preview)
     - [Production build](#production-build)
 - [Tree structure](#tree-structure)
 - [Asset structure](#asset-structure)
@@ -77,7 +79,29 @@ To start a development server, start a console then run :
 $ npm start
 ```
 
-It opens a new browser tab serving your game from the [`docs/`](./docs/) folder (*[`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
+It opens a new browser tab serving your game from the [`dist/`](./dist/) folder (*[`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) doesn't write any output files after compiling. Instead, it keeps bundle files in memory and serves them as if they were real files mounted at the server's root path.*).
+
+#### Distribution
+
+To build your game in any possible way, you'll need to create a distribution of your game. Start a console then run :
+
+```
+$ npm run dist
+```
+
+It creates a prebuild of your game in the [`dist/`](./dist/) folder which will be used by the [Electron preview](#electron-preview) and/or by the [Production build](#production-build).
+
+#### Electron preview
+
+To see the preview of the desktop application build of your game (made with [Electron](https://electronjs.org/)), start a console then run :
+
+```
+$ npm run electron
+```
+
+It opens a new browser tab serving your game from the [`dist/`](./dist/) folder.
+
+> **WARNING** : Don't forget to create/update the [distribution](#distribution) of your game before each [Electron](https://electronjs.org/) preview.
 
 #### Production build
 
@@ -87,7 +111,11 @@ To build your game for production, start a console then run :
 $ npm run build
 ```
 
-It creates a production build of your game in the [`docs/`](./docs/) folder (the [`docs/index.js`](./docs/index.js) file).
+It creates the production builds (executables) of your game in the [`build/`](./build/) folder.
+
+> **INFO** : Feel free to check the [`package.json`](./package.json) file if you just want to generate executables on specific platforms.
+
+> **WARNING** : Don't forget to create/update the [distribution](#distribution) of your game before each production build.
 
 ## Tree structure
 
@@ -98,10 +126,14 @@ docs/
 |-- index.css
 |-- index.html
 '-- index.js
+documentation/
+'-- SGDD.md
 sources/
 |-- game/
 |   |-- assets/
-|   '-- scenes/
+|   |-- components/
+|   |-- scenes/
+|   '-- systems/
 |-- theatre/
 |   |-- core/
 |   '-- modules/
@@ -127,7 +159,9 @@ The [`sources/`](./sources/) folder contains the code base for your game :
 sources/
 |-- game/
 |   |-- assets/
-|   '-- scenes/
+|   |-- components/
+|   |-- scenes/
+|   '-- systems/
 |-- theatre/
 |   |-- core/
 |   '-- modules/
@@ -136,11 +170,37 @@ sources/
 
 [`sources/theatre/`](./sources/theatre/) - The framework (the [`core`](./sources/theatre/core/) and useful [`modules`](./sources/theatre/modules/)).
 
-[`sources/game/`](./sources/game/) - All your source files (all [`assets`](./sources/game/assets/) and [`scenes`](./sources/game/scenes/)).
+[`sources/game/`](./sources/game/) - All your source files (all [`assets`](./sources/game/assets/), [`components`](./sources/game/components/), [`scenes`](./sources/game/scenes/) and [`systems`](./sources/game/systems/)).
 
 [`sources/index.js`](./sources/index.js) - The entry point of your game with your presets.
 
-#### Build folder
+#### Dist folder
+
+The [`dist/`](./dist/) folder contains the prebuild of your game :
+
+```
+dist/
+|-- electron.js
+|-- index.css
+|-- index.html
+|-- index.js
+|-- index.js.map
+'-- package.json
+```
+
+[`dist/electron.js`](./dist/electron.js) - The entry point for the [Electron](https://electronjs.org/) build.
+
+[`dist/index.js`](./dist/index.js) - The build ([production build](#production-build)) of your game.
+
+[`dist/index.js.map`](./dist/index.js.map) - The sourcemaps of your game.
+
+[`dist/index.html`](./dist/index.html) - The default HTML5 preview for your game.
+
+[`dist/index.css`](./dist/index.css) - The default style of the preview of your game.
+
+[`dist/package.json`](./dist/package.json) - The entry point for the [Electron](https://electronjs.org/) build.
+
+#### Docs folder
 
 The [`docs/`](./docs/) folder contains your game preview :
 
@@ -148,14 +208,28 @@ The [`docs/`](./docs/) folder contains your game preview :
 docs/
 |-- index.css
 |-- index.html
-'-- index.js
+|-- index.js
+'-- index.js.map
 ```
 
 [`docs/index.js`](./docs/index.js) - The build ([production build](#production-build)) of your game.
 
+[`docs/index.js.map`](./docs/index.js.map) - The sourcemaps of your game.
+
 [`docs/index.html`](./docs/index.html) - The default HTML5 preview for your game.
 
 [`docs/index.css`](./docs/index.css) - The default style of the preview of your game.
+
+#### Documentation folder
+
+The [`documentation/`](./documentation/) folder contains the documentation for your game :
+
+```
+documentation/
+'-- SGDD.md
+```
+
+[`documentation/SGDD.md`](./documentation/SGDD.md) - The template of the Short Game Design Document for your game (this is a short version of the usual Game Design Document).
 
 ## Asset structure
 

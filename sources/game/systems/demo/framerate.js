@@ -1,16 +1,19 @@
-function framerate(entity) {
+function framerate(entities) {
 
-    const framerateComponent = entity.get('framerate');
+    Object.entries(entities).forEach(([name, entity]) => {
 
-    framerateComponent.elapsed += this.delta.render;
-    framerateComponent.frames += 1;
+        const framerateComponent = entity.get('framerate');
 
-    if (framerateComponent.elapsed >= 1000) {
+        framerateComponent.elapsed += this.delta.render;
+        framerateComponent.frames += 1;
 
-        entity.get('text').text = 'fps:' + Math.round(framerateComponent.frames * 1000 / framerateComponent.elapsed);
-        framerateComponent.elapsed = 0;
-        framerateComponent.frames = 0;
-    }
+        if (framerateComponent.elapsed >= 1000) {
+
+            entity.get('text').text = 'fps:' + Math.round(framerateComponent.frames * 1000 / framerateComponent.elapsed);
+            framerateComponent.elapsed = 0;
+            framerateComponent.frames = 0;
+        }
+    });
 }
 
 export {framerate};

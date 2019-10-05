@@ -4,113 +4,116 @@ import {Image} from 'components/demo/image.js';
 import {Run} from 'components/demo/run.js';
 import {Spritesheet} from 'components/demo/spritesheet.js';
 
-function input(entity) {
+function input(entities) {
 
-    this.inputs.forEach((input) => {
+    Object.entries(entities).forEach(([name, entity]) => {
 
-        const directionComponent = entity.get('direction');
-        const imageComponent = entity.get('image');
-        const inputComponent = entity.get('input');
-        const spritesheetComponent = entity.get('spritesheet');
+        this.inputs.forEach((input) => {
 
-        if (inputComponent.inputs.indexOf(input.action) !== -1
-        && input.state === 'DOWN') {
+            const directionComponent = entity.get('direction');
+            const imageComponent = entity.get('image');
+            const inputComponent = entity.get('input');
+            const spritesheetComponent = entity.get('spritesheet');
 
-            switch (input.action) {
+            if (inputComponent.inputs.indexOf(input.action) !== -1
+            && input.state === 'DOWN') {
 
-                case 'KEY_UP':
+                switch (input.action) {
 
-                    entity.add([
+                    case 'KEY_UP':
 
-                        new Run(),
-                        new Direction('UP'),
-                        new Animation(spritesheetComponent.spritesheet['RUN_UP'])
-                    ]);
+                        entity.add([
 
-                break;
+                            new Run(),
+                            new Direction('UP'),
+                            new Animation(spritesheetComponent.spritesheet['RUN_UP'])
+                        ]);
 
-                case 'KEY_RIGHT':
+                    break;
 
-                    entity.add([
+                    case 'KEY_RIGHT':
 
-                        new Run(),
-                        new Direction('RIGHT'),
-                        new Animation(spritesheetComponent.spritesheet['RUN_RIGHT'])
-                    ]);
+                        entity.add([
 
-                break;
+                            new Run(),
+                            new Direction('RIGHT'),
+                            new Animation(spritesheetComponent.spritesheet['RUN_RIGHT'])
+                        ]);
 
-                case 'KEY_DOWN':
+                    break;
 
-                    entity.add([
+                    case 'KEY_DOWN':
 
-                        new Run(),
-                        new Direction('DOWN'),
-                        new Animation(spritesheetComponent.spritesheet['RUN_DOWN'])
-                    ]);
+                        entity.add([
 
-                break;
+                            new Run(),
+                            new Direction('DOWN'),
+                            new Animation(spritesheetComponent.spritesheet['RUN_DOWN'])
+                        ]);
 
-                case 'KEY_LEFT':
+                    break;
 
-                    entity.add([
+                    case 'KEY_LEFT':
 
-                        new Run(),
-                        new Direction('LEFT'),
-                        new Animation(spritesheetComponent.spritesheet['RUN_LEFT'])
-                    ]);
+                        entity.add([
 
-                break;
+                            new Run(),
+                            new Direction('LEFT'),
+                            new Animation(spritesheetComponent.spritesheet['RUN_LEFT'])
+                        ]);
+
+                    break;
+                }
             }
-        }
 
-        else if (entity.has(['run']) === true
-        && inputComponent.inputs.indexOf(input.action) !== -1
-        && input.state === 'UP') {
+            else if (entity.has(['run']) === true
+            && inputComponent.inputs.indexOf(input.action) !== -1
+            && input.state === 'UP') {
 
-            switch (input.action) {
+                switch (input.action) {
 
-                case 'KEY_UP':
+                    case 'KEY_UP':
 
-                    if (directionComponent.direction === 'UP') {
+                        if (directionComponent.direction === 'UP') {
 
-                        entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_UP'];
-                    }
+                            entity.remove(['animation', 'run']);
+                            imageComponent.frame = spritesheetComponent.spritesheet['IDLE_UP'];
+                        }
 
-                break;
+                    break;
 
-                case 'KEY_RIGHT':
+                    case 'KEY_RIGHT':
 
-                    if (directionComponent.direction === 'RIGHT') {
+                        if (directionComponent.direction === 'RIGHT') {
 
-                        entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_RIGHT'];
-                    }
+                            entity.remove(['animation', 'run']);
+                            imageComponent.frame = spritesheetComponent.spritesheet['IDLE_RIGHT'];
+                        }
 
-                break;
+                    break;
 
-                case 'KEY_DOWN':
+                    case 'KEY_DOWN':
 
-                    if (directionComponent.direction === 'DOWN') {
+                        if (directionComponent.direction === 'DOWN') {
 
-                        entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_DOWN'];
-                    }
+                            entity.remove(['animation', 'run']);
+                            imageComponent.frame = spritesheetComponent.spritesheet['IDLE_DOWN'];
+                        }
 
-                break;
+                    break;
 
-                case 'KEY_LEFT':
+                    case 'KEY_LEFT':
 
-                    if (directionComponent.direction === 'LEFT') {
+                        if (directionComponent.direction === 'LEFT') {
 
-                        entity.remove(['animation', 'run']);
-                        imageComponent.frame = spritesheetComponent.spritesheet['IDLE_LEFT'];
-                    }
+                            entity.remove(['animation', 'run']);
+                            imageComponent.frame = spritesheetComponent.spritesheet['IDLE_LEFT'];
+                        }
 
-                break;
+                    break;
+                }
             }
-        }
+        });
     });
 }
 

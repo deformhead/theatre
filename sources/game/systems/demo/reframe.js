@@ -1,6 +1,9 @@
-function reframe(entity) {
+function reframe(entities) {
 
-    entity.get('image').frame = entity.get('animation').current;
+    Object.entries(entities).forEach(([name, entity]) => {
+
+        entity.get('image').frame = entity.get('animation').current;
+    });
 }
 
 export {reframe};

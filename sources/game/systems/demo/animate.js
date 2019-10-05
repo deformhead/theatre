@@ -1,20 +1,23 @@
-function animate(entity) {
+function animate(entities) {
 
-    const animationComponent = entity.get('animation');
+    Object.entries(entities).forEach(([name, entity]) => {
 
-    if (animationComponent.frames.length > 1) {
+        const animationComponent = entity.get('animation');
 
-        animationComponent.elapsed += this.delta.update;
+        if (animationComponent.frames.length > 1) {
 
-        const duration = 1000 / animationComponent.framerate;
+            animationComponent.elapsed += this.delta.update;
 
-        while (animationComponent.elapsed >= duration) {
+            const duration = 1000 / animationComponent.framerate;
 
-            animationComponent.elapsed -= duration;
-            animationComponent.frame = (animationComponent.frame === animationComponent.frames.length - 1) ? 0 : animationComponent.frame + 1;
-            animationComponent.current = animationComponent.frames[animationComponent.frame];
+            while (animationComponent.elapsed >= duration) {
+
+                animationComponent.elapsed -= duration;
+                animationComponent.frame = (animationComponent.frame === animationComponent.frames.length - 1) ? 0 : animationComponent.frame + 1;
+                animationComponent.current = animationComponent.frames[animationComponent.frame];
+            }
         }
-    }
+    });
 }
 
 export {animate};
